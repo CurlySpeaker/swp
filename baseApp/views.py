@@ -11,3 +11,6 @@ def auth(request):
 
 def acc(request):
     return render(request, 'baseApp/account.html')
+
+def registration(request):
+	return render(request, 'baseApp/registration.html')
