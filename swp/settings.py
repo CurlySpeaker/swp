@@ -25,7 +25,7 @@ SECRET_KEY = 'f+zo^4%jjj)*w74_a1278%5$1rj%&ccmo)8-_%h#^c+2!yrg0l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['locahost', '178.128.192.209']
 
 
 # Application definition
