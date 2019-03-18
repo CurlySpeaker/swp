@@ -1,0 +1,27 @@
+version: "3.0"
+
+services:
+
+  web:
+      build:
+        context: ../
+        dockerfile: docker_config/swp.Dockerfile
+
+      privileged: true
+
+      image: swp/web
+      environment:
+          - DJANGO_SETTINGS_MODULE=swp.settings
+          - DATABASE_HOST=pg
+          - DATABASE_NAME=swp_database
+          - DATABASE_USER=ksnofrubegerkn
+          - DATABASE_PASSWORD=PIbIBupIBPIubKJDNMLMwemlwO
+          - DJANGO_RUN_MIGRATIONS=yes
+          - DJANGO_RUN_COLLECTSTATIC=yes
+          - DJANGO_RUN_CREATESUPERUSER=yes
+          - ADMIN_PASSWORD=${ADMIN_PASSWORD-test}
+          - ADMIN_USERNAME=${ADMIN_USERNAME-test}
+      ports:
+        - "8000:8000"
+      external_links:
+        - swp_pg_1:pg
