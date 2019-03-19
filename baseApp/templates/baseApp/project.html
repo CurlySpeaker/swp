@@ -1,0 +1,30 @@
+{% extends 'baseApp/dashboard.html'%}
+{% block title %}
+Dashboard
+{% endblock %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% block project %}
+<svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+     xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+     role="img" aria-label="Click to open: Project name"><title>Click View to open</title>
+    <rect width="100%" height="100%" fill="#55595c"/>
+    <text x="50%" y="50%" fill="#eceeef" dy=".3em">Project name: {{ project.name }}</text>
+</svg>
+<div class="card-body">
+    <p class="card-text">Project description: {{ project.descr}}</p>
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+        </div>
+        <!--Optional: Specify the time a person has spent on a project/task-->
+        <small class="text-muted" aria-label="time spent">Time spent: {{ project.time_spent }} h.</small>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>
